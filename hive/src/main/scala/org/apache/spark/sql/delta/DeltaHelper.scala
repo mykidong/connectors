@@ -99,7 +99,7 @@ object DeltaHelper extends Logging {
 
     // selected files to Hive to be processed
     val files = DeltaLog.filterFileList(
-      snapshotToUse.metadata.partitionColumns, snapshotToUse.allFiles.toDF(), convertedFilterExpr)
+      snapshotToUse.metadata.partitionSchema, snapshotToUse.allFiles.toDF(), convertedFilterExpr)
       .as[AddFile](SingleAction.addFileEncoder)
       // Drop unused potential huge fields
       .map(add => add.copy(stats = null, tags = null))(SingleAction.addFileEncoder)
