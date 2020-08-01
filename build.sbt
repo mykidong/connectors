@@ -23,7 +23,7 @@ lazy val testScalastyle = taskKey[Unit]("testScalastyle")
 crossScalaVersions := Seq("2.12.8", "2.11.12")
 
 val sparkVersion = "3.0.0"
-val hadoopVersion = "2.7.4"
+val hadoopVersion = "3.2.0"
 val hiveVersion = "2.3.7"
 val deltaVersion = "0.7.0"
 
