@@ -79,7 +79,7 @@ object DeltaPushFilter extends Logging {
                 case f: GenericUDFOPEqualOrLessThan =>
                   LessThanOrEqual(columnAttr, constantVal)
                 case f: GenericUDFBridge if f.getUdfName.equals("like") =>
-                  Like(columnAttr, constantVal, null)
+                  Like(columnAttr, constantVal, '\\')
                 case f: GenericUDFIn =>
                   val inConstantVals = nd.getChildren.asScala
                     .filter(_.isInstanceOf[ExprNodeConstantDesc])
