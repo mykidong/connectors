@@ -22,10 +22,10 @@ lazy val testScalastyle = taskKey[Unit]("testScalastyle")
 
 crossScalaVersions := Seq("2.12.8", "2.11.12")
 
-val sparkVersion = "2.4.3"
+val sparkVersion = "3.0.0"
 val hadoopVersion = "2.7.2"
 val hiveVersion = "2.3.3"
-val deltaVersion = "0.5.0"
+val deltaVersion = "0.7.0"
 
 lazy val commonSettings = Seq(
   organization := "io.delta",
